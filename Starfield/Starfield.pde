@@ -1,8 +1,9 @@
 Star s;
 
 void setup() {
-  size(400, 400);
+  size(800, 800);
   background(0);
+  stroke(255);
   s = new Star();
 }
 
@@ -11,8 +12,9 @@ void draw() {
   
   // Draw star
   float zRatio = s.z / width;
-  float sSize = Star.size * zRatio;
-  rect(s.x, s.y, Star.size * sSize, sSize);
+  float inverseZRatio = 1 - zRatio;
+  float offset = inverseZRatio * 20;
+  line(s.x, s.y, s.x - offset, s.y - offset);
   
   s.z += Star.speed;
   if (s.z > width)
