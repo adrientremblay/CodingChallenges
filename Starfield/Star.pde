@@ -7,14 +7,20 @@ class Star {
   float z;
   
   Star() {
+    init();
+  }
+  
+  private void init() {
     x = random(-width, width);
     y = random(-height, height);
-    z = width;
+    z = random (1, width);
   }
   
   public void update() {
     z -= speed;
-    if (z < 0);
+    if (z <= 0) {
+      init();
+    }
   }
   
   public void draw() {
