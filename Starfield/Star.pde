@@ -30,6 +30,15 @@ class Star {
    float sx = x/ z * width;
    float sy = y / z * width;
    
-   ellipse(sx, sy, 8, 8);
+   float psx = x/ (z + ((1 - (z / width)) * 10)) * width;
+   float psy = y /(z + ((1 - (z / width)) * 10)) * width;
+   
+   // drawing ball
+   float currentSize = size * (1 - (z / width));
+   ellipse(sx, sy, currentSize, currentSize);
+   
+   // drawing line
+   stroke(255);
+   line (sx, sy, psx, psy);
   }
 }
