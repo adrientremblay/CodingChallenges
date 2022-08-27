@@ -1,24 +1,21 @@
-Star s;
+Star[] stars = new Star[100];
 
 void setup() {
   size(800, 800);
   background(0);
-  stroke(255);
-  s = new Star();
+  
+  for (int i = 0 ; i < stars.length ; i++)
+    stars[i] = new Star();
 }
 
 void draw() {
   clear();
+  translate(width / 2, height / 2);
   
-  // Draw star
-  float zRatio = s.z / width;
-  float inverseZRatio = 1 - zRatio;
-  float offset = inverseZRatio * 20;
-  line(s.x, s.y, s.x - offset, s.y - offset);
-  
-  s.z += Star.speed;
-  if (s.z > width)
-    s = new Star();
+  for (Star s : stars) {
+    s.update();
+    s.draw();
+  }
   
   // 
 }
