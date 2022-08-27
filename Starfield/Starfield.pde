@@ -1,4 +1,5 @@
 Star[] stars = new Star[800];
+float speed;
 
 void setup() {
   size(800, 800);
@@ -10,6 +11,9 @@ void setup() {
 
 void draw() {
   clear();
+  
+  speed = map(mouseX, 0, width, 0, 20);
+  
   translate(width / 2, height / 2);
   
   for (Star s : stars) {
