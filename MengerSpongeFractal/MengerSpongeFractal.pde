@@ -8,11 +8,14 @@ void setup() {
 
 void draw() {
   background(51);
-  stroke(0);
+  lights();
+  noStroke();
   
   translate(width / 2, height / 2);
   
   rotateX(a);
+  rotateY(a * 0.1);
+  rotateZ(a * 0.1);
   for (Box b : sponge) {
     b.draw(); 
   }
