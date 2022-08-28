@@ -21,13 +21,7 @@ ArrayList<Box> generate() {
     for (int x = -1 ; x <= 1 ; x++) {
       for (int y = -1 ; y <= 1 ; y++) {
         for (int z = -1 ; z <= 1 ; z++) {
-          int zeroCount = 0;
-          if (x == 0)
-            zeroCount++;
-          if (y == 0)
-            zeroCount++;
-          if (z==0)
-            zeroCount++;
+          int zeroCount = 3 - (abs(x) + abs(y) + abs(z));
             
           if (zeroCount >= 2)
             continue; 
