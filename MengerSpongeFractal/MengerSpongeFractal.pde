@@ -21,12 +21,13 @@ void draw() {
 }
 
 void keyPressed() {
-  if (key == ' '){
-    ArrayList<Box> spongeCopy = new ArrayList<Box>(sponge);
-    
-    for (Box box : spongeCopy) {
-       sponge.remove(box);
-       sponge.addAll(box.generate());
-    }
-  }
+  if (key != ' ') 
+    return;
+  
+  ArrayList<Box> next = new ArrayList<Box>();
+  
+  for (Box b : sponge)
+     next.addAll(b.generate());
+  
+  sponge = next;
 }
