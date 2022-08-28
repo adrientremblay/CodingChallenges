@@ -8,8 +8,7 @@ void setup() {
 
 void draw() {
   background(51);
-  stroke(255);
-  noFill();
+  stroke(0);
   
   translate(width / 2, height / 2);
   
